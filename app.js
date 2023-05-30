@@ -181,7 +181,7 @@ app.get("/todos", async (request, response) => {
     //scenario 4
     // has Only search Property
     case hasSearchProperty(request.query):
-      getTodosQuery = `SELECT * FROM todo WHERE todo LIKE %${search_q}%;`;
+      getTodosQuery = `SELECT * FROM todo WHERE todo LIKE '%${search_q}%';`;
       data = await database.all(getTodosQuery);
       response.send(data.map((eachItem) => outPutResult(eachItem)));
       break;
@@ -252,7 +252,7 @@ app.post("/todos/", async (request, response) => {
                     INSERT INTO 
                        todo(id, todo, category, priority, status, due_date)
                     VALUES
-                        (${Id},'${todo}','${category}','${priority}','${status}','${postNewDueDate}');`;
+                        (${id},'${todo}','${category}','${priority}','${status}','${postNewDueDate}');`;
           await database.run(postTodoQuery);
           response.send("Todo Successfully Added");
         } else {
