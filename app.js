@@ -261,7 +261,7 @@ app.post("/todos/", async (request, response) => {
         }
       } else {
         response.status(400);
-        response.send("Invalid Todo Query");
+        response.send("Invalid Todo Category");
       }
     } else {
       response.status(400);
