@@ -49,7 +49,7 @@ const hasCategoryAndStatus = (requestQuery) => {
     );
 };
 
-const hasCategoryAndPriority = (requestQuery) = {
+const hasCategoryAndPriority = (requestQuery) => {
     return(
         requestQuery.category !== undefined && requestQuery.priority !== undefined
     );
